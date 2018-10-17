@@ -41,7 +41,6 @@ class MyPage extends React.Component {
       .then((result) => {
         const bn = new this.props.web3.utils.BN(result)
         id = ("0000000000000000000000000000000000000000000000000000000000000000" + bn.toString(16)).slice(-64)
-        console.log(id)
         if (TokenModel.isAlreadyMixed(id)) {
           throw new Error(`token ${id} is already mixed.`)
         } else {
@@ -56,21 +55,17 @@ class MyPage extends React.Component {
         const bn = new this.props.web3.utils.BN(result)
         const inscription = ("0000000000000000000000000000000000000000000000000000000000000000" + bn.toString(16)).slice(-64)
         const model = TokenModel.decode(id, currentAddress, creator, inscription, ContractData.Dragon.addresses[networkId])
-        console.log(model)
         this.setState({tokenModels: this.state.tokenModels.concat(model)})
         return this.updateTokenId(nextIndex - 1, remainCount - 1)
       })
       .catch((error) => {
-        console.log(error)
         this.updateTokenId(nextIndex - 1, remainCount)
       })
   }
 
   handleMintClick = () => {
     const tokenModel = TokenModel.mint()
-    console.log(tokenModel)
     const inscription = tokenModel.encode()
-    console.log(inscription)
     this.props.mintToken && this.props.mintToken(inscription)
   }
 
