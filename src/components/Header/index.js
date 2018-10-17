@@ -7,6 +7,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import Snackbar from '@material-ui/core/Snackbar'
 import Web3Injector from '../../injectors/Web3Injector'
 import Web3TransactionType from '../../enums/Web3TransactionType'
+import NetworkName from '../../enums/NetworkName'
 
 class Header extends React.Component {
   state = {
@@ -17,14 +18,8 @@ class Header extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { web3Transaction } = this.props
-    if (web3Transaction != prevProps.web3Transaction) {
+    if (web3Transaction !== prevProps.web3Transaction) {
       switch (web3Transaction) {
-        case Web3TransactionType.none:
-          this.setState({
-            isProgress: false,
-            isOpen: false,
-          })
-          break
         case Web3TransactionType.pending:
           this.setState({
             isProgress: true,
@@ -48,6 +43,12 @@ class Header extends React.Component {
             snackMessage: "cancel transaction.",
           })
           break
+        default:
+          this.setState({
+            isProgress: false,
+            isOpen: false,
+          })
+          break
       }
     }
   }
@@ -63,15 +64,23 @@ class Header extends React.Component {
   }
 
   render() {
+    const { networkId } = this.props
     const { isProgress, isOpen, snackMessage } = this.state
     return (
-      <AppBar position="static">
+      <AppBar position="static" color="secondary">
         <Toolbar>
           <Typography variant="h4" color="inherit" style={{flexGrow: 1}} onClick={this.handleLogoClick}>
             Dragon
           </Typography>
           {
-            isProgress && <CircularProgress color="secondary" size={30} />
+            isProgress && <CircularProgress color="primary" size={30} />
+          }
+          {
+            networkId && NetworkName[networkId] && (
+              <Typography variant="h6" color="inherit">
+                {NetworkName[networkId]}
+              </Typography>
+            )
           }
         </Toolbar>
         <Snackbar
