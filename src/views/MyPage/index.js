@@ -54,7 +54,7 @@ class MyPage extends React.Component {
       .then((result) => {
         const bn = new this.props.web3.utils.BN(result)
         const inscription = ("0000000000000000000000000000000000000000000000000000000000000000" + bn.toString(16)).slice(-64)
-        const model = TokenModel.decode(id, currentAddress, creator, inscription, ContractData.Dragon.addresses[networkId])
+        const model = TokenModel.decode(id, currentAddress, creator, inscription, networkId)
         this.setState({tokenModels: this.state.tokenModels.concat(model)})
         return this.updateTokenId(nextIndex - 1, remainCount - 1)
       })

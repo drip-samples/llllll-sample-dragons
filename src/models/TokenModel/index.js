@@ -1,7 +1,6 @@
 import TokenType from '../../enums/TokenType'
+import ContractData from '../../enums/ContractData'
 
-const IS_ALREADY_DISPLAY_KEY = 'IS_ALREADY_DISPLAY_KEY_'
-const IS_ALREADY_MIXED_KEY = 'IS_ALREADY_MIXED_KEY_'
 const TRUE_VALUE = 'true'
 
 class TokenModel {
@@ -19,10 +18,19 @@ class TokenModel {
     this.intellect = 0
     this.isAlreadyDisplay = false
     this.isAlreadyMixed = false
+    this.networkId = 0
   }
 
-  static isAlreadyMixed(id) {
-    return window.localStorage.getItem(IS_ALREADY_MIXED_KEY + `0x${id.slice(-64)}`.toLowerCase()) === TRUE_VALUE
+  static isAlreadyDisplayKey(tokenId, networkId) {
+    return `DragonAlreadyDisplay_${networkId}_${`0x${tokenId.slice(-64)}`.toLowerCase()}`
+  }
+
+  static isAlreadyMixedKey(tokenId, networkId) {
+    return `DragonAlreadyMixed_${networkId}_${`0x${tokenId.slice(-64)}`.toLowerCase()}`
+  }
+
+  static isAlreadyMixed(id, networkId) {
+    return window.localStorage.getItem(this.isAlreadyMixedKey(id, networkId)) === TRUE_VALUE
   }
 
   static decodeTokenType(model, inscription) {
@@ -114,7 +122,7 @@ class TokenModel {
     model.intellect = toByte(inscription, 1) * ((toByte(inscription, 2) % 8) + 3)
   }
 
-  static decode(id, owner, creator, inscription, contractAddress) {
+  static decode(id, owner, creator, inscription, networkId) {
     // validate
     if ((id === null)
       || (id.length === 0)
@@ -133,8 +141,9 @@ class TokenModel {
     model.owner = owner
     model.creator = creator
     model.inscription = `0x${inscription.slice(-64)}`
+    model.networkId = networkId
 
-    if (creator.toLowerCase() === contractAddress.toLowerCase()) {
+    if (creator.toLowerCase() === ContractData.Dragon.addresses[networkId].toLowerCase()) {
       this.decodeTokenType(model, inscription)
 
     } else {
@@ -149,8 +158,8 @@ class TokenModel {
       this.decodeForJewel(model, inscription)
     }
 
-    model.isAlreadyMixed = (window.localStorage.getItem(IS_ALREADY_MIXED_KEY + model.id.toLowerCase()) === TRUE_VALUE)
-    model.isAlreadyDisplay = (window.localStorage.getItem(IS_ALREADY_DISPLAY_KEY + model.id.toLowerCase()) === TRUE_VALUE)
+    model.isAlreadyMixed = (window.localStorage.getItem(TokenModel.isAlreadyMixedKey(model.id, networkId)) === TRUE_VALUE)
+    model.isAlreadyDisplay = (window.localStorage.getItem(TokenModel.isAlreadyDisplayKey(model.id, networkId)) === TRUE_VALUE)
 
     return model
   }
@@ -318,12 +327,12 @@ class TokenModel {
 
   alreadyDisplay() {
     this.isAlreadyDisplay = true
-    window.localStorage.setItem(IS_ALREADY_DISPLAY_KEY + this.id.toLowerCase(), TRUE_VALUE)
+    window.localStorage.setItem(TokenModel.isAlreadyDisplayKey(this.id, this.networkId), TRUE_VALUE)
   }
 
   alreadyMixed() {
     this.isAlreadyMixed = true
-    window.localStorage.setItem(IS_ALREADY_MIXED_KEY + this.id.toLowerCase(), TRUE_VALUE)
+    window.localStorage.setItem(TokenModel.isAlreadyMixedKey(this.id, this.networkId), TRUE_VALUE)
   }
 
   isDragon() {
