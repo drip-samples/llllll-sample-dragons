@@ -91,7 +91,7 @@ class TokenDetail extends React.Component {
       .then((result) => {
         const bn = new this.props.web3.utils.BN(result)
         const inscription = ("0000000000000000000000000000000000000000000000000000000000000000" + bn.toString(16)).slice(-64)
-        const model = TokenModel.decode(tokenId, owner, creator, inscription, ContractData.Dragon.addresses[networkId])
+        const model = TokenModel.decode(tokenId, owner, creator, inscription, networkId)
         if (model != null) {
           model.alreadyDisplay()
           this.setState({tokenModel: model})
