@@ -13,8 +13,8 @@ export default {
   Dragon: {
     abi: Dragon['abi'],
     addresses: {
-      4: null,
-      42: null,
+      4: '0x26addb72ab35fad08a895cfe717c5ff312a0f699',
+      42: '0xcdc2f9e5b782e421f6188736bd294ee5c716db2f',
       5777: Dragon['networks']['5777']['address'],
     },
   },
