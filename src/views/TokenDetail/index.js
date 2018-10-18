@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '@material-ui/core/Button'
 import ValidateWeb3Injector from '../../injectors/ValidateWeb3Injector'
 import TokenType from '../../enums/TokenType'
 import TokenModel from '../../models/TokenModel'
@@ -67,6 +68,10 @@ class TokenDetail extends React.Component {
     }
   }
 
+  handleOtherDappsClick = () => {
+    window.open(`https://drip-samples.github.io/llllll-sample-bandstar${this.props.history.location.pathname}`, '_blank')
+  }
+
   componentDidMount() {
     const { networkId, currentAddress } = this.props
     const { tokenId } = this.props.match.params
@@ -112,12 +117,14 @@ class TokenDetail extends React.Component {
           (isNotFound === true) ? (
             <div>token not found</div>
 
-          ) : ((tokenModel !== null) && tokenModel.isAlreadyMixed) ? (
-            <div>token is already used.</div>
-
           ) : (tokenModel !== null) ? (
             <React.Fragment>
               <div><TokenIcon tokenModel={tokenModel} style={{height: '200px'}} /></div>
+              {
+                tokenModel.isAlreadyMixed && (
+                  <div style={{color: '#ff0000'}}>token is already used.</div>
+                )
+              }
               <div><TokenTypeChip tokenModel={tokenModel} /></div>
               {
                 (tokenModel.tokenType === TokenType.redJewel) ? (
@@ -147,6 +154,11 @@ class TokenDetail extends React.Component {
                 Share URL
                 <br />
                 <a href={shareUrl} alt='share token url'>{shareUrl}</a>
+              </div>
+              <div style={{marginTop: '30px'}}>
+                <Button variant="outlined" onClick={this.handleOtherDappsClick}>
+                  BandStar
+                </Button>
               </div>
             </React.Fragment>
 

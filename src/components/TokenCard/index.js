@@ -23,13 +23,11 @@ class TokenCard extends React.Component {
     let cardStyle = {
       width: '100%',
     }
-    if (isMixedMode) {
-      if (isSelected) {
-        cardStyle.backgroundColor = teal['100']
+    if (tokenModel && tokenModel.isAlreadyMixed) {
+      cardStyle.backgroundColor = grey['500']
 
-      } else if (tokenModel.isAlreadyMixed) {
-        cardStyle.backgroundColor = grey['500']
-      }
+    } else if (isMixedMode && isSelected) {
+      cardStyle.backgroundColor = teal['100']
     }
     return (
       <Card onClick={this.handleClick}>
