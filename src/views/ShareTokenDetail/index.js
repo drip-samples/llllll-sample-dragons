@@ -129,12 +129,14 @@ class ShareTokenDetail extends React.Component {
           (isNotFound === true) ? (
             <div>token not found</div>
 
-          ) : ((tokenModel !== null) && tokenModel.isAlreadyMixed) ? (
-            <div>token is already used.</div>
-
           ) : (tokenModel !== null) ? (
             <React.Fragment>
               <div><TokenIcon tokenModel={tokenModel} style={{height: '200px'}} /></div>
+              {
+                tokenModel.isAlreadyMixed && (
+                  <div style={{color: '#ff0000'}}>token is already used.</div>
+                )
+              }
               <div><TokenTypeChip tokenType={tokenModel.tokenType} /></div>
               {
                 (tokenModel.tokenType === TokenType.redJewel) ? (
