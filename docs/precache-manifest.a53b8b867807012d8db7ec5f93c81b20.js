@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "4039d34b76265a72c47dca29010f11dc",
-    "url": "/llllll-sample-dragons/static/media/fantasy_dragon_green.4039d34b.png"
+    "revision": "e93644c01179402dfb0854641e75494a",
+    "url": "/llllll-sample-dragons/static/media/fantasy_dragon_blue.e93644c0.png"
   },
   {
-    "revision": "7e50384ac1174431ffc4",
-    "url": "/llllll-sample-dragons/static/css/main.3069b4bd.chunk.css"
+    "revision": "d8646ed395ed62d8c5db",
+    "url": "/llllll-sample-dragons/static/css/main.65f4a8bf.chunk.css"
   },
   {
-    "revision": "2b21c3886d9d4889c1d8",
-    "url": "/llllll-sample-dragons/static/js/1.2b21c388.chunk.js"
+    "revision": "eb0bbd41f900a611b463",
+    "url": "/llllll-sample-dragons/static/js/1.eb0bbd41.chunk.js"
   },
   {
     "revision": "4501324c7f02657a0dcb",
@@ -28,12 +28,12 @@ self.__precacheManifest = [
     "url": "/llllll-sample-dragons/static/media/fantasy_dragon_red.604d1849.png"
   },
   {
-    "revision": "7e50384ac1174431ffc4",
-    "url": "/llllll-sample-dragons/static/js/main.7e50384a.chunk.js"
+    "revision": "4039d34b76265a72c47dca29010f11dc",
+    "url": "/llllll-sample-dragons/static/media/fantasy_dragon_green.4039d34b.png"
   },
   {
-    "revision": "e93644c01179402dfb0854641e75494a",
-    "url": "/llllll-sample-dragons/static/media/fantasy_dragon_blue.e93644c0.png"
+    "revision": "d8646ed395ed62d8c5db",
+    "url": "/llllll-sample-dragons/static/js/main.d8646ed3.chunk.js"
   },
   {
     "revision": "2eeeff3b3c0ee48d27f9a7cb7c1bdfc9",
@@ -56,7 +56,11 @@ self.__precacheManifest = [
     "url": "/llllll-sample-dragons/static/media/jewel11_citrine.49f07d40.png"
   },
   {
-    "revision": "1c9555e9a851e1d04a5fddaa0fc89c80",
+    "revision": "f4b16392edec68abe47283d7027c39cb",
+    "url": "/llllll-sample-dragons/static/media/poweredby6p.f4b16392.png"
+  },
+  {
+    "revision": "8f2d5b586d15109634413b2aad236ea6",
     "url": "/llllll-sample-dragons/index.html"
   }
 ];
