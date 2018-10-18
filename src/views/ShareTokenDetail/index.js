@@ -1,7 +1,5 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import LinearProgress from '@material-ui/core/LinearProgress'
-import ValidateWeb3Injector from '../../injectors/ValidateWeb3Injector'
 import TokenType from '../../enums/TokenType'
 import TokenModel from '../../models/TokenModel'
 import TokenIcon from '../../components/TokenIcon'
