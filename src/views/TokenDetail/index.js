@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '@material-ui/core/Button'
 import ValidateWeb3Injector from '../../injectors/ValidateWeb3Injector'
 import TokenType from '../../enums/TokenType'
 import TokenModel from '../../models/TokenModel'
@@ -65,6 +66,10 @@ class TokenDetail extends React.Component {
       default:
         return null
     }
+  }
+
+  handleOtherDappsClick = () => {
+    window.open(`https://drip-samples.github.io/llllll-sample-bandstar${this.props.history.location.pathname}`, '_blank')
   }
 
   componentDidMount() {
@@ -147,6 +152,11 @@ class TokenDetail extends React.Component {
                 Share URL
                 <br />
                 <a href={shareUrl} alt='share token url'>{shareUrl}</a>
+              </div>
+              <div style={{marginTop: '30px'}}>
+                <Button variant="outlined" onClick={this.handleOtherDappsClick}>
+                  BandStar
+                </Button>
               </div>
             </React.Fragment>
 

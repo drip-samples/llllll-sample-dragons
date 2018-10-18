@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '@material-ui/core/Button'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import ValidateWeb3Injector from '../../injectors/ValidateWeb3Injector'
 import TokenType from '../../enums/TokenType'
@@ -79,6 +80,10 @@ class ShareTokenDetail extends React.Component {
     }
   }
 
+  handleOtherDappsClick = () => {
+    window.open(`https://drip-samples.github.io/llllll-sample-bandstar${this.props.history.location.pathname}`, '_blank')
+  }
+
   componentDidMount() {
     const { tokenId, networkName } = this.props.match.params
     const networkId = this.networkId(networkName)
@@ -155,6 +160,11 @@ class ShareTokenDetail extends React.Component {
                   </React.Fragment>
                 )
               }
+              <div style={{marginTop: '30px'}}>
+                <Button variant="outlined" onClick={this.handleOtherDappsClick}>
+                  BandStar
+                </Button>
+              </div>
             </React.Fragment>
 
           ) : (
