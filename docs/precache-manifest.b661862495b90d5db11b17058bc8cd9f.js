@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/llllll-sample-dragons/static/media/fantasy_dragon_green.4039d34b.png"
   },
   {
-    "revision": "c00994a8afe1f69f594d",
+    "revision": "7e50384ac1174431ffc4",
     "url": "/llllll-sample-dragons/static/css/main.3069b4bd.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/llllll-sample-dragons/static/media/fantasy_dragon_red.604d1849.png"
   },
   {
-    "revision": "c00994a8afe1f69f594d",
-    "url": "/llllll-sample-dragons/static/js/main.c00994a8.chunk.js"
+    "revision": "7e50384ac1174431ffc4",
+    "url": "/llllll-sample-dragons/static/js/main.7e50384a.chunk.js"
   },
   {
     "revision": "e93644c01179402dfb0854641e75494a",
@@ -56,7 +56,7 @@ self.__precacheManifest = [
     "url": "/llllll-sample-dragons/static/media/jewel11_citrine.49f07d40.png"
   },
   {
-    "revision": "b8d31b308a6559633c700e929fb0e522",
+    "revision": "1c9555e9a851e1d04a5fddaa0fc89c80",
     "url": "/llllll-sample-dragons/index.html"
   }
 ];
