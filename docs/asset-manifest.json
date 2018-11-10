@@ -1,7 +1,7 @@
 {
   "main.css": "/llllll-sample-dragons/static/css/main.97568b91.chunk.css",
-  "main.js": "/llllll-sample-dragons/static/js/main.c4f85b70.chunk.js",
-  "main.js.map": "/llllll-sample-dragons/static/js/main.c4f85b70.chunk.js.map",
+  "main.js": "/llllll-sample-dragons/static/js/main.f1020b23.chunk.js",
+  "main.js.map": "/llllll-sample-dragons/static/js/main.f1020b23.chunk.js.map",
   "static/js/1.f0e3f8df.chunk.js": "/llllll-sample-dragons/static/js/1.f0e3f8df.chunk.js",
   "static/js/1.f0e3f8df.chunk.js.map": "/llllll-sample-dragons/static/js/1.f0e3f8df.chunk.js.map",
   "runtime~main.js": "/llllll-sample-dragons/static/js/runtime~main.4501324c.js",
@@ -19,6 +19,6 @@
   "static/media/fantasy_dragon_black.png": "/llllll-sample-dragons/static/media/fantasy_dragon_black.e0323321.png",
   "static/css/main.97568b91.chunk.css.map": "/llllll-sample-dragons/static/css/main.97568b91.chunk.css.map",
   "index.html": "/llllll-sample-dragons/index.html",
-  "precache-manifest.f2077377100efdaa777d64992204d865.js": "/llllll-sample-dragons/precache-manifest.f2077377100efdaa777d64992204d865.js",
+  "precache-manifest.b9c0f1d39c498dea9d6a61e9b35e0e7b.js": "/llllll-sample-dragons/precache-manifest.b9c0f1d39c498dea9d6a61e9b35e0e7b.js",
   "service-worker.js": "/llllll-sample-dragons/service-worker.js"
 }
